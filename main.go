@@ -32,7 +32,7 @@ func main() {
 	}
 
 	chatGPT := chatgpt.Init(persistentConfig)
-	log.Println("Started ChatGPT")
+	log.Println("Started Mist well look at you")
 
 	envConfig, err := config.LoadEnvConfig(".env")
 	if err != nil {
@@ -90,12 +90,12 @@ func main() {
 		var text string
 		switch update.Message.Command() {
 		case "help":
-			text = "Send a message to start talking with ChatGPT. You can use /reload at any point to clear the conversation history and start from scratch (don't worry, it won't delete the Telegram messages)."
+			text = "Start talking to Mist's AI. If you didn't want that it's a bit late. You can use /reload at any point to clear the conversation history and start from scratch (don't worry, it won't delete the Telegram messages)."
 		case "start":
-			text = "Send a message to start talking with ChatGPT. You can use /reload at any point to clear the conversation history and start from scratch (don't worry, it won't delete the Telegram messages)."
+			text = "Send a message to start talking with Mist's AI. Be honest, now. Or else. You can use /reload at any point to clear the conversation history and start from scratch (don't worry, it won't delete the Telegram messages)."
 		case "reload":
 			chatGPT.ResetConversation(updateChatID)
-			text = "Started a new conversation. Enjoy!"
+			text = "You're fucked."
 		default:
 			text = "Unknown command. Send /help to see a list of commands."
 		}
